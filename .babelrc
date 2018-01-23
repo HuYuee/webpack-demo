@@ -1,6 +1,8 @@
 {
     "presets": ["env","stage-0","react"],
-    "plugins": [
-        
+    "plugins": [["import", {
+        "libraryName": "antd",
+        "style": "css"
+      }]
     ]
 }
