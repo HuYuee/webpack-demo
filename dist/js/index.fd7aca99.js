@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 14);
@@ -991,7 +991,7 @@ var S = function (_React$Component2) {
     var _this2 = _possibleConstructorReturn(this, (S.__proto__ || Object.getPrototypeOf(S)).call(this, props));
 
     _this2.state = {
-      name: 'huyue'
+      name: 'huyue12323'
     };
     return _this2;
   }
@@ -1006,8 +1006,10 @@ var S = function (_React$Component2) {
         null,
         _react2.default.createElement(
           "button",
-          { onClick: function onClick() {
-              _this3.setState({ 'name': 'yueming' });
+          { ref: function ref(p) {
+              _this3.p = p;
+            }, onClick: function onClick() {
+              console.log(_this3.p);_this3.setState({ 'name': 'yueming' });
             } },
           "\u6EF4\u6EF4\u6EF4"
         ),
@@ -18350,8 +18352,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js!./index.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});

@@ -4,10 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const devServer = require('webpack-dev-server');
 
 const config = {
-  entry: './src/index.js',
+  entry: {
+    'index':'./src/js/index.js',
+    'context':'./src/js/context.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'dist.js'
+    filename: 'js/[name].[hash:8].js',
+    publicPath: '/'
   },
   module: {
     rules: [{

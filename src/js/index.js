@@ -1,7 +1,7 @@
 // import { Table, Icon, Switch, Radio, Form, Divider } from 'antd';
 import React, {Component} from "react";
 import {render,createPortal} from "react-dom";
-import './index.css';
+import '../css/index.css';
 
 class Portal extends React.Component {
   constructor(props) {
@@ -22,8 +22,9 @@ class S extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={()=>{this.setState({'name':'yueming'})}}>滴滴滴</button>
+        <button ref={(p)=>{this.p = p}} onClick={()=>{console.log(this.p );this.setState({'name':'yueming'})}}>滴滴滴</button>
         <Portal name={this.state.name}/>
+      
       </div>
     );
   }
