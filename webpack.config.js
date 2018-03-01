@@ -1,9 +1,10 @@
 const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const devServer = require('webpack-dev-server');
 
 const config = {
-  entry: './js/index.js',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'dist.js'
@@ -20,14 +21,19 @@ const config = {
       }
     ]
   },
-  externals: {
-    "react": 'React',
-    "react-dom": 'ReactDOM'
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 9000
   },
+  // externals: {
+  //   "react": 'React',
+  //   "react-dom": 'ReactDOM'
+  // },
   plugins: [
-    new UglifyJSPlugin(),
+    // new UglifyJSPlugin(),
     new HtmlWebpackPlugin({
-      template: 'js/index.html'
+      template: 'src/index.html'
     })
   ]
 };
